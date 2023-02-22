@@ -25,3 +25,24 @@
   * This is some old data on DGX-1V comparing the MPI vs NCCL for Amber multi-GPU scaling.
   * Furthermore, AFAIK, there is no current effort or plan to optimize Amber on multi-GPU.
 
+<br><br>
+
+* ### [155个GPU！多云场景下的Amber自由能计算](https://fastonetech.com/blog/bio-amber-and-multi-cloud/)
+  * 对药物分子的虚拟筛选，仅仅实现分子对接是不够的，往往会面临一个问题就是药物分子活性的评价。许多药物和其它生物分子的活性都是通过与受体大分子之间的相互作用表现出来的，是动态的。
+  * 受体和配体之间结合自由能（Binding Afinity）评价是基于结构的计算机辅助药物分子设计的核心问题。
+  * 基于分子动力学（Molecular Dynamics, MD）模拟的炼金术自由能（Alchemical Free Energy，AFE）计算是提高我们对各种生物过程的理解以及加快多种疾病的药物设计和优化的关键工具。
+  * MD模拟实验数据量大，计算周期长，常用软件包括Amber、NAMD、GROMACS、Schrödinger等等。GPU的并行处理技术能大大加速计算效率，所以很多MD模拟软件都开始支持GPU。
+    * GROMACS作为一款开源软件，完全免费，但其成熟版本对于GPU的支持并不理想，教程相对少，对用户的要求比较高。
+    * Schrödinger是商用软件，功能全面，GPU支持很好，但License是按使用核数计算的，价格相对昂贵。
+    * Amber软件包包括两个部分：AmberTools和Amber
+      * AmberTools可以在Amber官网免费下载和使用，Tools中包含了Amber绝大部分模块，但不支持PMEMD和GPU加速。
+      * Amber是收费的，从Amber11开始支持GPU加速仿真，Amber18开始支持GPU计算自由能，且教程齐全易操作，不限制CORE的使用数量。2020年4月，已经更新到Amber20版本。
+
+<br>
+
+****
+
+<br>
+
+## MISC
+
