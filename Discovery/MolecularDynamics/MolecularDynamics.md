@@ -8,6 +8,50 @@
 
 ## Amber
 
+* ### [分子对接与分子动力学模拟在药物研发中的应用](https://www.iivd.net/thread-63985-1-1.html)
+  * 分子对接(Molecular docking)与分子动力学模拟(Molecular dynamics simulation)是计算生物学中重要的一部分，在生物学研究中不断发挥着重要的作用。
+  * 分子对接
+    * 分子对接基本原理
+      * 分子对接技术(Molecular Docking Method, MDM)是指通过计算机模拟将小分子(配体)放置于大分子靶标(受体)的结合区域，再通过计算物理化学参数预测两者的结合力(结合亲和性)和结合方式(构象)，进而找到配体与受体在其活性区域相结合时能量最低构象的方法。配体与受体结合时，彼此存在静电相互作用，氢键相互作用，范德华相互作用和疏水相互作用
+    * 分子对接的分类
+      * 刚性对接
+      * 半柔性对接
+      * 柔性对接
+    * 分子对接的基本流程
+      * 小分子处理
+        * 大部分小分子结构可以从Pubchem/Chemspider等数据库里面下载到sdf或者pdb格式的2D/3D结构文件
+      * 大分子处理
+        * 大部分蛋白/酶的结构我们可以从PDB蛋白数据库进行获取，获取到的蛋白结构上往往会有多余的成分，要对蛋白进行预处理，主要是加氢、加电荷、二硫键和质子化状态方面的信息整合，其中最大的难点在于如何处理小分子周围氨基酸HIS的质子化状态，目前国际上没有一个统一的方法；对于少部分蛋白数据库中没有收录的晶体结构，可以使用Alphafold2、Rosettafold等软件进行建模获取目标蛋白结构。
+      * 寻找潜在的活性位点（口袋）
+      * 建立对接盒子，准备对接受体文件包
+      * 选择对接精度，完成对接
+    * 分子对接的应用
+      * **<font color='red'>分子对接方法可用于模拟小分子和蛋白质在原子水平上的相互作用，这使我们能够表征小分子在靶蛋白结合位点的行为，并阐明基本的生化过程</font>**
+  * 分子动力学模拟
+    * 分子动力学基本原理
+      * 分子动力学的算法是有限差分方法
+    * 分子动力学模拟中的常用概念
+      * 周期性边界条件
+      * 势函数
+      * 系综
+      * 积分步长
+    * 分子动力学模拟的基本流程
+      * 评估体系
+      * 选择工具
+      * 软件的选择
+        * 通常与软件主流使用的力场有关, 软件本身也具有一定的偏向性。
+        * <font color='red'>蛋白体系: GROMACS, AMBER, NAMD均可；</font>
+        * <font color='red'>DNA, RNA体系: 首选AMBER；</font>
+        * <font color='red'>界面体系: DL_POLY比较强大；</font>
+        * <font color='red'>材料体系:LAMMPS是不错的选择。</font>
+      * 力场的选择
+    * 初始结构
+    * 输入参数
+    * 
+
+
+<br><br>
+
 * ### [Amber 2020 Reference Manual](https://ambermd.org/doc12/Amber20.pdf)
   * 商业软件, NV不提供Docker
   * Starting with Amber 20, Amber supports use of the NVidia NCCL library for communications between multiple GPUs, which an provide a performance improvement over plain MPI. If the library is enabled (using - DNCCL=TRUE), then it will be activated when pmemd.MPI.cuda is run on 3 or more GPUs.
